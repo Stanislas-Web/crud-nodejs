@@ -1,0 +1,30 @@
+<%- include('./includes/header') %> 
+<div class="container">
+    <h1><%= title %> </h1>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <td>NOM</td>
+                <td>PRENOM</td>
+                <td>OPTION</td>
+                <td>ACTION</td>
+            </tr>
+        </thead>
+        <tbody>
+           <% for (element of apprenants) { %>
+            <tr>
+                <td><%= element.nom %> </td>
+                <td><%= element.prenom %> </td>
+                <td><%= element.option %> </td>
+                <td>
+                    <a href="" class="btn btn-success">Modifier</a>
+                    <a href="/list/<%= element._id %> " class="btn btn-danger">Supprimer</a>
+                </td>
+              </tr>
+           <% } %>
+        </tbody>
+    </table>
+    <a class="btn btn-primary" href="/add">Ajouter un apprenant</a>
+</div>
+
+<%- include('./includes/footer') %> 
