@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 
 const apprenantRouters = require('./routes/apprenantRouter');
 
-mongoose.connect('mongodb://127.0.0.1:27017/apprenantKda',{useNewUrlParser:true,useUnifiedTopology:true},(error)=>{
+mongoose.connect('mongodb://127.0.0.1:27017/apprenantKda',{useNewUrlParser:true,useUnifiedTopology:true, useFindAndModify: false},(error)=>{
     if(!error){
         console.log(`La connexion à la base de donnée à reussit`);
     }else{
